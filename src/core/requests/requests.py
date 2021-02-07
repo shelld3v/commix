@@ -196,7 +196,7 @@ def estimate_response_time(url, timesec):
   except _urllib.error.URLError as err_msg:
     if settings.VERBOSITY_LEVEL >= 1:
       print(settings.FAIL_STATUS)
-    print(settings.print_critical_msg(str(err_msg.args[0]).split("] ")[1] + "."))
+    print(settings.print_critical_msg(str(err_msg.args[0]).split("] ")[-1] + "."))
     raise SystemExit()
 
   except ValueError as err_msg:
